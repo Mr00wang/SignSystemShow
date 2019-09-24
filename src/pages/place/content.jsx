@@ -43,8 +43,11 @@ export default class Content extends Component{
             memo[x[property]].push(x);
             return memo;
         }, {});
-    }
+    };
 
+    /**
+     *签到
+     **/
     sign = async (memberName,seat,state) => {
         //state状态为0为签到,为1为签退
         if(state === 0){
@@ -52,7 +55,7 @@ export default class Content extends Component{
 
                 const request = await reqSign(memberName);
                 if(request.error_code === 23){
-                    message.success(request.msg);
+                    message.success(`${memberName} `+request.msg,5);
                     document.getElementById(seat).style.backgroundColor='#94FA09'; //浅绿
                     this.getUsers();
 
@@ -65,7 +68,7 @@ export default class Content extends Component{
             if(memberName !== ''){
                 const request = await reqSignExit(memberName);
                 if (request.error_code === 25){
-                    message.success(request.msg);
+                    message.success(`${memberName} `+request.msg,5);
                     document.getElementById(seat).style.backgroundColor='#E7815B'; //玫瑰红
                     this.getUsers()
                 }else {

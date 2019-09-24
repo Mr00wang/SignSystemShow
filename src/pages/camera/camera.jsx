@@ -48,6 +48,7 @@ export default class Camera extends Component{
             video.srcObject = mediaStream;
             video.play();
         });
+        this.takePhoto();
     };
 
     /**
@@ -136,7 +137,7 @@ export default class Camera extends Component{
             <div className="camera" >
                 <Button type="primary" onClick={this.openMedia}>开启摄像头</Button>
                 {/*<Button type="primary" onClick={this.closeMedia}>关闭摄像头</Button>*/}
-                {/*<Button type="primary" onClick={this.takePhoto}>拍照</Button>*/}
+                <Button type="primary" onClick={this.takePhoto}>拍照</Button>
                 <Button type="primary" onClick={this.closeMedia}>关闭摄像头</Button>
                 <video id="video" width="450px" height="280px" autoPlay="autoplay"/>
                 <canvas id="canvas" width="450px" height="280px" />
