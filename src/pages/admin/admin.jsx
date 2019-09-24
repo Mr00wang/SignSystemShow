@@ -4,13 +4,14 @@ import memoryUtils from "../../utils/memoryUtils";
 import './admin.less'
 import Header from  '../../component/header'
 import Content from "../../component/content/content";
+
 /*
 后台管理的路由组件
  */
 export default class Admin extends Component{
 
     render() {
-        const user = memoryUtils.user
+        const user = memoryUtils.user;
         if(!user){
             return <Redirect to='/login' />
         }

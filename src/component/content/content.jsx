@@ -6,15 +6,24 @@ import Time from "../../pages/time/time";
 import Rank from "../../pages/rank/rank";
 import Place from "../../pages/place/place";
 import Inform from "../../pages/inform/inform";
+import {Record} from "../../pages/record/record";
 export default class Content extends Component{
     render() {
         return(
             <div className='content'>
                 <Row className='content-top'>
-                    <Inform/>
+                    <Col span={15}>
+                        <Inform/>
+                    </Col>
+                    <Col span={8}>
+
+                        <Record/>
+                    </Col>
+                    <Col span={1}/>
+                    {/**/}
                 </Row>
                 <Row className='content-center'>
-                    <h1 style={{fontFamily:'楷体'}}>成功 = 艰苦劳动 + 正确的方法 + 少说空话</h1>
+                    {/*<h1 style={{fontFamily:'楷体'}}>成功 = 艰苦劳动 + 正确的方法 + 少说空话</h1>*/}
                 </Row>
                 <Row className='content-bottom'>
                     <Col span={6} className="content-bottom1">
